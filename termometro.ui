@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Termometro</class>
+ <widget class="QMainWindow" name="Termometro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>487</width>
+    <height>306</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Termometro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="recursos.qrc">
+    <normaloff>:/imagenes/recursos qrs/termometro.png</normaloff>:/imagenes/recursos qrs/termometro.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 170, 164);
+alternate-background-color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);
+</string>
+        </property>
+        <property name="title">
+         <string>Centigrados</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLCDNumber" name="outCent">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(176, 234, 255);
+color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdCent">
+           <property name="styleSheet">
+            <string notr="true">
+background-color: rgb(176, 234, 255);</string>
+           </property>
+           <property name="minimum">
+            <number>-18</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 170, 164);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="title">
+         <string>Fahrenheit</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLCDNumber" name="outFahr">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(160, 255, 204);
+color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdFahr">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(160, 255, 204);</string>
+           </property>
+           <property name="maximum">
+            <number>210</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 170, 164);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="title">
+         <string>Kelvin </string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QLCDNumber" name="outKel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(196, 178, 255);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdKel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(196, 178, 255);</string>
+           </property>
+           <property name="minimum">
+            <number>273</number>
+           </property>
+           <property name="maximum">
+            <number>373</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>487</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cmdCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdKel</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outKel</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>393</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
